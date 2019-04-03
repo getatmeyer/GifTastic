@@ -28,12 +28,13 @@ $("#add-marvelCharc").on("click", function(event) { // This function handles eve
   });
   marvelButtons();
 
-function callApi () {
+  $("#gifs-div").on("click", callApi (this.data-name))
+//Add parameter to the below function 
+  function callApi ( rating ) {
 
-  $("#gifs-div").on("click", function () {
+console.log("hi")
+    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + rating + "&api_key=Gs0TNfUIkttmc4yeUOBjAJPa1UR6Ck1D&limit=9";
 
-    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + marvelCharc + "&api_key=Gs0TNfUIkttmc4yeUOBjAJPa1UR6Ck1DC&limit=9";
-    var marvelCharc = $(this).attr("data-name");
 
    $.ajax({
     url: queryURL,
@@ -43,50 +44,51 @@ function callApi () {
         .then(function (response) {
 
           // Storing an array of results in the results variable
-          var results = response.data.image_original_url;
-          console.log("results");
-          console.log(results = "results");
-          console.log("response.data.image_original_url");         
-          
+          var results = response.data;
+          console.log(results)          
           // Looping over every result item
-          for (var j = 0; j < results.length; j++) {
-            console.log("results.length");
+          for (var i = 0; i < results.length; i++) {
+            console.log(results.length);
             
              // Only taking action if the photo has an appropriate rating
-             if (results[j].rating !== "y" && results[j].rating !== "pg-13") {
+             if (results[i].rating !== "y" && results[i].rating !== "pg-13") {
 
 
               // Creating a div with the class "item"
               var gifDiv = $("<#gifs-divs>");
+              console.log(gifDiv);
+              
+
 
               // Storing the result item's rating
-              var rating = results[j].rating;
+              var rating = results[i].rating;
 
               // Creating a paragraph tag with the result item's rating
               var a = $("<p>").text("Rating: " + rating);
 
               // Creating an image tag
-              var a = $("<img>");
-
+              var img = $("<img>");
+              console.log(img);
+              
               // Setting the catImage src attribute to imageUrl
-              a.attr("src", results);
-              a.attr("alt", "a image");
-
+              // img.attr("src", results[j]);
+              img.attr("alt", "superhero image");
+              
+              
               // Giving the image tag an src attribute of a proprty pulled off the
               // result item
-              a.attr("src", results[j].images.fixed_height.url);
+              img.attr("src", results[i].images.fixed_height.url);
+              console.log(results.images);
+              
 
               gifDiv.append(a);
 
               // Prepending the gifDiv to the "#gifs-appear-here" div in the HTML
               $("#gifs-div").prepend(a);
-
-              callApi();
-
              
              }callApi();
+
              }
             })
-        })
       }
       
