@@ -31,11 +31,10 @@ $("#add-marvelCharc").on("click", function(event) { // This function handles eve
   marvelButtons();
 
   //#.gifs-div changed to .marvel for future reference
-  $(document).on("click", ".marvel", function() {
+  $(document).on("click", ".marvel", function(rating) {
     //Add parameter to the below function 
 
-        var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + "&api_key=Gs0TNfUIkttmc4yeUOBjAJPa1UR6Ck1D&limit=9";
-    
+        var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + rating + "&api_key=Gs0TNfUIkttmc4yeUOBjAJPa1UR6Ck1D&limit=9";
     
        $.ajax({
         url: queryURL,
@@ -43,6 +42,9 @@ $("#add-marvelCharc").on("click", function(event) { // This function handles eve
       })
               // After the data comes back from the API
             .then(function (response) {
+
+              
+              
     
               // Storing an array of results in the results variable
               var results = response.data;
@@ -58,11 +60,14 @@ $("#add-marvelCharc").on("click", function(event) { // This function handles eve
     
     
                   // Creating a div with the class "item"
-                  var gifDiv = $("<.gifs-divs>");
+                  var gifDiv = $("<.gifs-div>");
                   console.log(gifDiv);
+
+                  var rating = $(this).text();
+                  console.log(rating);
     
                   // Storing the result item's rating
-                  // var rating = results[i].rating;
+                  var rating = results[i].rating;
     
                   // Creating a paragraph tag with the result item's rating
                   var a = $("<p>").text("Rating: " + rating);
@@ -82,10 +87,10 @@ $("#add-marvelCharc").on("click", function(event) { // This function handles eve
                   console.log(results.images);
                   
     
-                  gifDiv.append(a);
+                  gifDiv.append();
     
                   // Prepending the gifDiv to the "#gifs-appear-here" div in the HTML
-                  $(".marvel").prepend(a);
+                  $(".gifs-div").prepend(a);
                  
                  }
     
