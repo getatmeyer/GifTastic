@@ -1,7 +1,7 @@
-// $( document ).ready(function() {
+$( document ).ready(function() {
 
   // Initial array of Marvel Characters
-  var characters = ["Iron Man", "Thor", "Hulk", "Ant-Man", "Black Widow", "Doctor Strange", "Black Panther", "Gambit", "Falcon", "Winter Solider", "Storm" ];
+  var characters = ["Iron Man", "Thor", "Hulk", "Ant-Man", "Black Widow", "Doctor Strange", "Black Panther", "Gambit", "Falcon", "Winter Soldier", "Wolverine", "Captain America", "Iron Fist", "DareDevil", "Dr. Doom", "Loki", "Spider-man", "Venom"]
 
   function marvelButtons() {  //function for displaying Marvel data
 
@@ -40,7 +40,7 @@ $("#add-marvelCharc").on("click", function(event) { // This function handles eve
     console.log(person);
     
         
-        var queryURL =  "https://api.giphy.com/v1/gifs/search?q=" + person + "&limit=9&api_key=Gs0TNfUIkttmc4yeUOBjAJPa1UR6Ck1D";
+        var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + person + "&limit=10&api_key=Gs0TNfUIkttmc4yeUOBjAJPa1UR6Ck1D";
      
        $.ajax({ // performing our AJAX GET request
         url: queryURL,
@@ -86,18 +86,28 @@ $("#add-marvelCharc").on("click", function(event) { // This function handles eve
                   personImage.attr("src", results[j].images.fixed_height.url );
                   console.log(results[j].images);
 
-    
+                  var state = $(this).attr("data-state");
+
+                  if (state === "still") {
+                    $(this).attr("src", $(this).attr("data-animate"));
+                    $(this).attr("data-state", "animate");
+                  } else {
+                    $(this).attr("src", $(this).attr("data-still"));
+                    $(this).attr("data-state", "still");
+                  }
+
+
+
                   gifDiv.append(p);
                   gifDiv.append(personImage);
     
                   // Prepending the gifDiv to the "#gifs-appear-here" div in the HTML
                   $(".gifs-div").prepend(gifDiv);
-                 
                  }
     
                  }
                 })
               })
              
-              // });
+              });
             
