@@ -1,4 +1,4 @@
-// $( document ).ready(function() {
+$( document ).ready(function() {
 
   // Initial array of Marvel Characters
   var characters = ["Iron Man", "Thor", "Hulk", "Ant-Man", "Black Widow", "Doctor Strange", "Black Panther", "Gambit", "Falcon", "Winter Solider", "Storm" ];
@@ -35,12 +35,11 @@ $("#add-marvelCharc").on("click", function(event) { // This function handles eve
   $(document).on("click", ".marvel", function (rating, person) {
     //Add parameter to the below function 
 
+    // button triggered
     var person = $(this).attr("data-name");
     console.log(person);
-    
 
-
-        var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + person + rating + "&api_key=Gs0TNfUIkttmc4yeUOBjAJPa1UR6Ck1D&limit=9";
+        var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + person + rating + "&api_key=Gs0TNfUIkttmc4yeUOBjAJPa1UR6Ck1D&limit=9&tag=marvel";
      
        $.ajax({ // performing our AJAX GET request
         url: queryURL,
@@ -62,7 +61,7 @@ $("#add-marvelCharc").on("click", function(event) { // This function handles eve
                  if (results[j].rating !== "y" && results[j].rating !== "pg") {
     
                   // Creating a div with the class "item"
-                  var gifDiv = $("<#gifs-div>");
+                  var gifDiv = $("<gifs-div>");
                   console.log(gifDiv);
 
                   var rating = $(this).text();
@@ -94,11 +93,11 @@ $("#add-marvelCharc").on("click", function(event) { // This function handles eve
                   gifDiv.append(personImage);
     
                   // Prepending the gifDiv to the "#gifs-appear-here" div in the HTML
-                  $("#gifs-div").prepend(gifDiv);
+                  $(".gifs-div").prepend(gifDiv);
                  
                  }
     
                  }
                 })
               })
-            // });
+            });
