@@ -39,7 +39,7 @@ $("#add-marvelCharc").on("click", function(event) { // This function handles eve
     var person = $(this).attr("data-name");
     console.log(person);
 
-        var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + person + rating + "&api_key=Gs0TNfUIkttmc4yeUOBjAJPa1UR6Ck1D&limit=9&tag=marvel";
+        var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + person + rating + "&api_key=Gs0TNfUIkttmc4yeUOBjAJPa1UR6Ck1D&limit=9&tag=superhero";
      
        $.ajax({ // performing our AJAX GET request
         url: queryURL,
@@ -71,7 +71,7 @@ $("#add-marvelCharc").on("click", function(event) { // This function handles eve
                   var rating = results[j].rating;
     
                   // Creating a paragraph tag with the result item's rating
-                  var p = $("<p>").text("rating: " + rating);
+                  var p = $("<p>").text("Rating : " + rating);
     
                   // Creating an image tag
                   var personImage = $("<img>");

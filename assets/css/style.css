@@ -17,6 +17,14 @@ h1 {
     color: white;
 
 }
+p {
+    background-color: white;
+    margin-top: 7px;
+    width:200px;
+}
+.gifs-div {
+    display: inline-block;
+}
 .marvel { /* marvel character button */
     margin: 4px;
     color: white;
