@@ -35,8 +35,7 @@ $("#add-marvelCharc").on("click", function(event) { // This function handles eve
   $(document).on("click", ".marvel", function (rating, person) {
     //Add parameter to the below function 
 
-    var person = $(this).attr("data-person");
-    
+    var person = $(this).attr("data-name");
     console.log(person);
     
 
