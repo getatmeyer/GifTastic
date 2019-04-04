@@ -31,7 +31,7 @@ $("#add-marvelCharc").on("click", function(event) { // This function handles eve
   marvelButtons();
 
   //#.gifs-div changed to .marvel for future reference
-  $(document).on("click", ".marvel", function(rating) {
+  $(document).on("click", ".marvel", function (rating) {
     //Add parameter to the below function 
 
         var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + rating + "&api_key=Gs0TNfUIkttmc4yeUOBjAJPa1UR6Ck1D&limit=9";
@@ -76,15 +76,16 @@ $("#add-marvelCharc").on("click", function(event) { // This function handles eve
                   var img = $("<img>");
                   console.log(img);
                   
-                  // Setting the catImage src attribute to imageUrl
-                  // img.attr("src", results[j]);
+                  // Setting the marvelImage src attribute to imageUrl
+                  // img.attr("src", results[i]);
                   img.attr("alt", "superhero image");
+                  console.log(img.attr);
                   
-                  
+          
                   // Giving the image tag an src attribute of a proprty pulled off the
                   // result item
                   img.attr("src", results[i].images.fixed_height.url);
-                  console.log(results.images);
+                  console.log(results[i].images);
                   
     
                   gifDiv.append();
