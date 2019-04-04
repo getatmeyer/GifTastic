@@ -1,4 +1,4 @@
-$( document ).ready(function() {
+// $( document ).ready(function() {
 
   // Initial array of Marvel Characters
   var characters = ["Iron Man", "Thor", "Hulk", "Ant-Man", "Black Widow", "Doctor Strange", "Black Panther", "Gambit", "Falcon", "Winter Solider", "Storm" ];
@@ -32,20 +32,21 @@ $("#add-marvelCharc").on("click", function(event) { // This function handles eve
 
   //#.gifs-div changed to .marvel for future reference
 
-  $(document).on("click", ".marvel", function (rating, person) {
+  $(document).on("click", ".marvel", function (person, rating ) {
     //Add parameter to the below function 
 
     // button triggered
     var person = $(this).attr("data-name");
     console.log(person);
-
-        var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + person + rating + "&api_key=Gs0TNfUIkttmc4yeUOBjAJPa1UR6Ck1D&limit=9&tag=superhero";
+    
+        
+        var queryURL =  "https://api.giphy.com/v1/gifs/search?q=" + person + "&limit=9&api_key=Gs0TNfUIkttmc4yeUOBjAJPa1UR6Ck1D";
      
        $.ajax({ // performing our AJAX GET request
         url: queryURL,
         method: "GET"
       })
-              // After the data comes back from the API
+            // After the data comes back from the API
             .then(function (response) {
 
               // Storing an array of results in the results variable
@@ -74,20 +75,17 @@ $("#add-marvelCharc").on("click", function(event) { // This function handles eve
                   var p = $("<p>").text("Rating : " + rating);
     
                   // Creating an image tag
-                  var personImage = $("<img>");
+                  var personImage = $("<img>")
                   console.log(personImage);
                   
                   // Setting the marvelImage src attribute to imageUrl
-                  // img.attr("src", results[i]);
-                  // personimg.attr("alt", "superhero image");
-                  // console.log(img.attr);
-                  
-          
+                  personImage.attr("alt", "marvel image");
+
                   // Giving the image tag an src attribute of a proprty pulled off the
                   // result item
-                  personImage.attr("src", results[j].images.fixed_height.url);
+                  personImage.attr("src", results[j].images.fixed_height.url );
                   console.log(results[j].images);
-                  
+
     
                   gifDiv.append(p);
                   gifDiv.append(personImage);
@@ -100,4 +98,6 @@ $("#add-marvelCharc").on("click", function(event) { // This function handles eve
                  }
                 })
               })
-            });
+             
+              // });
+            
