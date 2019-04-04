@@ -63,7 +63,7 @@ $("#add-marvelCharc").on("click", function(event) { // This function handles eve
                  if (results[j].rating !== "y" && results[j].rating !== "pg") {
     
                   // Creating a div with the class "item"
-                  var gifDiv = $("<.gifs-div>");
+                  var gifDiv = $("<#gifs-div>");
                   console.log(gifDiv);
 
                   var rating = $(this).text();
