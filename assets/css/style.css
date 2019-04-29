@@ -1,29 +1,44 @@
 
 html, body {
-    margin-top: 40px;
-    width: 720px;
-    padding-left: 4rem;
+    margin-top: 25px;
     height: 100%;
-    background: url("../images/vintagemarvel.jpg") no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-
+    
+}
+.background {
+    position: relative;
 }
 h1 {
     font-family: 'Domine', serif;
-    font-size: 24px;
-    color: white;
-
+    color:  white;
+}
+.display-4 {
+font-size: 53px;
+position: absolute;
+top: 155px;
+left: 482px;
 }
 p {
     background-color: white;
     margin-top: 7px;
-    width:200px;
+    width: 200px;
 }
-.gifs-div {
-    display: inline-block;
+#buttons-view {
+    margin-top: 35px;
+    margin-left: 20px;
+}
+/* add Marvel Character text */
+#marvel-form {
+    color: #ffff00;
+    font-size: 18.4px;
+    /* margin-left: 15px; */
+    position: absolute;
+    top: 221px;
+    left: 482px;
+    display: flex;
+}
+#add-marvelCharc {
+    float: right;
+    margin-left: 10px;
 }
 .marvel { /* marvel character button */
     margin: 4px;
@@ -31,11 +46,75 @@ p {
     font-size: 18px;
     font-family: 'Karla', sans-serif;
     background-color: black;
-    opacity: 0.8;
-}
-#add-marvelCharc {
+    border-color: gray;
+    opacity: 1;
     
-    float: right;
-    margin: 0 auto;
+}
+/* white input form */
+#marvel-input {
+    margin-left: 10px;
+    width: 180px;
 }
 
+.gif {
+    display: grid;
+    display: inline-block;
+    grid-gap: 10px;
+    clear: both;
+    grid-auto-columns: column; 
+    margin: 20px;
+    
+}
+.gif img {
+    height: 100px;
+    width: auto;
+}
+.container {
+    margin-left: 0px;
+    margin-bottom: 0px;
+}
+.row {
+    border-top: 17px solid rgb(17, 17, 17);
+    border-bottom: 17px solid rgb(17, 17, 17);
+    margin-top: 229px;
+    width: 1480px;
+    height: 530px;
+    background: url("../images/vintagemarvel.jpg") center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+header {
+    padding-bottom:144px;
+}
+img {
+margin-left:390px;
+}
+#logo {
+    margin-left: 70px;
+    border-bottom: 4px solid black;
+    border-bottom-style: ridge;
+    padding:5px;
+}
+.content {
+    min-height: 35%;
+  }
+    .content-inside {
+    padding: 20px;
+    padding-bottom: 30px;
+  }
+    .footer {
+    height: 30px;
+    border-top: 8px solid black;;
+    padding: 20px;
+    text-align: center;
+    font-size: 13px;
+    clear: both;
+    
+  }
+  #deadpool {
+  position: absolute;
+  top: 682px;
+  left: 460px;
+  }
