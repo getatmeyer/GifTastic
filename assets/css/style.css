@@ -2,6 +2,7 @@
 html, body {
     margin-top: 25px;
     height: 100%;
+    scroll-behavior:  smooth;
     
 }
 .background {
@@ -18,9 +19,14 @@ top: 155px;
 left: 482px;
 }
 p {
-    background-color: white;
-    margin-top: 7px;
-    width: 200px;
+    font-family: 'Carter One', cursive;
+    background-color: yellow;
+    margin-top: 48px;
+    width: 125px;
+    margin-left: 35px;
+    
+   
+    margin-bottom: 10px;
 }
 #buttons-view {
     margin-top: 35px;
@@ -62,11 +68,20 @@ p {
     grid-gap: 10px;
     clear: both;
     grid-auto-columns: column; 
-    margin: 20px;
+
+}
+.pop {
+    background-image: url("../images/pop.jpg");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
     
+    
+
 }
 .gif img {
-    height: 100px;
+    height: 185px;
     width: auto;
 }
 .container {
@@ -89,7 +104,10 @@ header {
     padding-bottom:144px;
 }
 img {
-margin-left:390px;
+margin-left: 34px;
+}
+#secondlogo {
+    margin-left:390px;
 }
 #logo {
     margin-left: 70px;
@@ -97,8 +115,14 @@ margin-left:390px;
     border-bottom-style: ridge;
     padding:5px;
 }
+#footerLogo {
+    margin-left: 70px;
+    margin-top: 30px;
+    padding: 5px;
+}
 .content {
     min-height: 35%;
+    background-color: whitesmoke;
   }
     .content-inside {
     padding: 20px;
@@ -113,8 +137,32 @@ margin-left:390px;
     clear: both;
     
   }
-  #deadpool {
-  position: absolute;
-  top: 682px;
-  left: 460px;
+  #deadimg {
+    position: absolute;
+    top: 684px;
+    left: 770px;
+    } 
+  h4 {
+      margin-left:40px;
+      padding-top: 30px;
+  }
+  li {
+      float: right;
+      margin-right: 280px;
+      list-style: none;
+      color: gainsboro;
+      margin-top: 30px;
+  }
+  a {
+      color: gainsboro;
+  }
+  a:hover {
+      color: gray;
+      text-decoration: none;
+  }
+  #resources {
+
+display: inline-block;
+font-size: 17px;
+margin-left: 30px;
   }

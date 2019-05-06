@@ -85,10 +85,10 @@
             var rating = results[j].rating;
 
             // Creating a paragraph tag with the result item's rating
-            var p = $("<p>").text("Rating : " + rating);
+            var p = $("<p>").text(" Rating : " + rating);
 
             // Creating an image tag
-            var personImage = $("<img>")
+            var personImage = $("<img class='gif'>")
             // console.log(personImage);
 
             // Setting the marvelImage src attribute to imageUrl
@@ -96,28 +96,12 @@
 
             // Giving the image tag an src attribute of a proprty pulled off the
             // result item
+            
             personImage.attr("src", results[j].images.fixed_height.url);
-
-            // if (state === "still") {
-            //   $(this).attr("src", $(this.personImagesrc).attr("data-animate"));
-            //   $(this).attr("data-state", "animate");
-            // } else {
-            //   $(this).attr("src", $(this).attr("data-still"));
-            //   $(this).attr("data-state", "still");
-            // }
-            //append an attribute called data-still which is a string url
-            // data-still.append(p);
-            //append an attribute called data-animate which is a string url
-            // data-animate.append(p);
-            //append an attribute called data-state and set it to still
-            // data-state.append(p);
-
-            // <img src="https://api.giphy.com/v1/gifs/search?q=Gs0TNfUIkttmc4yeUOBjAJPa1UR6Ck1D"
-            //           data-still="https://api.giphy.com/v1/gifs/search?q=Gs0TNfUIkttmc4yeUOBjAJPa1UR6Ck1D"
-            //           data-animate="https://api.giphy.com/v1/gifs/search?q=Gs0TNfUIkttmc4yeUOBjAJPa1UR6Ck1D"
-            //           data-still="still"
-            //           class="gif">
-
+            personImage.attr("data-state", "still")
+            personImage.attr("data-animate", results[j].images.fixed_height.url);
+            personImage.attr("data-still", results[j].images.fixed_height_still.url);
+            
             // <img src="www.urlforstillimage" data-still="www.urlforstillimage" data-animate="www.urlforanimatedImage" data-state="still"></img>
             console.log(results[j].images);
 
@@ -132,26 +116,27 @@
           }
         }
 
-        // $(".gif").on("click", function () {
+        $(".gif").on("click", function() {
         //   // The attr jQuery method allows us to get or set the value of any attribute on our HTML element
-        //   var state = $(this).find("img")[0].attr("data-state");
+          var state = $(this).attr("data-state");
+          
+            if (state ==="still") {
+              $(this).attr("src", $(this).attr("data-animate"));
 
-        //   console.log(state);
-        //   var $thisImg = $(this).find("img")[0]
-        //   console.log($thisImg)
-          // console.log($)
-          // console.log($($thisImg).attr("src"))
-          // If the clicked image's state is still, update its src attribute to what its data-animate value is.
-          // Then, set the image's data-state to animate
-          // Else set src to the data-still value
-
+              $(this).attr("data-state", "animate");
+            } else {
+              $(this).attr("src", $(this).attr("data-still"));
+              $(this).attr("data-state", "still");
+            }
+            });
+        
+        
 
 
         })
       })
 
 
-  // })
 
 
 
