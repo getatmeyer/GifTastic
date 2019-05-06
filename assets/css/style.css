@@ -122,9 +122,9 @@ margin-left: 34px;
 }
 .content {
     min-height: 35%;
-    background-color: whitesmoke;
+
   }
-    .content-inside {
+    .content-inside {  
     padding: 20px;
     padding-bottom: 30px;
   }
@@ -161,8 +161,18 @@ margin-left: 34px;
       text-decoration: none;
   }
   #resources {
-
-display: inline-block;
+      
 font-size: 17px;
-margin-left: 30px;
+display: inline-block;
+
   }
+  span {
+      font-size: 13px;
+      
+  }
+  #description {
+      margin-top: 8px;
+      margin-left: 73px;
+      width: 200px;
+  }
+  
