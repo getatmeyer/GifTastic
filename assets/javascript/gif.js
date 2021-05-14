@@ -124,14 +124,11 @@
               $(this).attr("src", $(this).attr("data-animate"));
 
               $(this).attr("data-state", "animate");
-            } else {
+            }else {
               $(this).attr("src", $(this).attr("data-still"));
               $(this).attr("data-state", "still");
             }
             });
-        
-        
-
 
         })
       })
